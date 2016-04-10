@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // On first load, show home view
 showLoading("#main-content");
 $ajaxUtils.sendGetRequest(
-  homeHtmlUrl, 
+  allCategoriesUrl, 
   buildAndShowHomeHTML, // ***** <---- TODO: STEP 1: Substitute [...] ******
   true); // Explicitely setting the flag to get JSON from server processed into an object literal
 });
@@ -131,7 +131,6 @@ function buildAndShowHomeHTML (categories) {
     },
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
 }
-
 
 // Given array of category objects, returns a random category object.
 function chooseRandomCategory (categories) {
