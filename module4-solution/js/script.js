@@ -160,6 +160,15 @@ dc.loadMenuItems = function (categoryShort) {
     buildAndShowMenuItemsHTML);
 };
 
+dc.piyush = function(){
+	showLoading("#main-content");
+	var x = ["A","B","SP","C","F","V","DK","VG","CU","NL","NF","PF","FR","CM","FY","SO","DS","D"];
+	var categoryShort = x[Math.floor(Math.random()*18)];
+  $ajaxUtils.sendGetRequest(
+    menuItemsUrl + categoryShort,
+    buildAndShowMenuItemsHTML);
+};
+
 
 // Builds HTML for the categories page based on the data
 // from the server
@@ -341,6 +350,11 @@ function insertItemPortionName(html,
   return html;
 }
 
+function piyush()
+{
+	
+	$dc.loadMenuItems(y);
+}
 
 global.$dc = dc;
 
